@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+  height: 100vh;
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 180px;
+    z-index: 1;
+    box-shadow: 5px 3px 8px 4px #ccc;
+    padding: 20px;
+    .inputText {
+      width: 82%;
+      border: 1px solid #ccc;
+      padding: 5px;
+      outline: none;
+    }
+    .btnCoppy {
+      padding: 4px 15px;
+      outline: none;
+    }
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      .tooltiptext {
+        visibility: hidden;
+        width: 140px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -75px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+      &:hover {
+        .tooltiptext {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
